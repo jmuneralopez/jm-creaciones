@@ -1,0 +1,158 @@
+// ================================================
+// FORMS COMPONENT - JM CREACIONES Y DISEÑO
+// ================================================
+
+.form {
+  &__group {
+    margin-bottom: $spacing-medium;
+  }
+
+  &__label {
+    display: block;
+    font-family: $font-primary;
+    font-weight: $font-weight-medium;
+    color: $color-dark;
+    margin-bottom: $spacing-xs;
+    font-size: $font-size-base;
+
+    &--required::after {
+      content: '*';
+      color: $color-danger;
+      margin-left: 4px;
+    }
+  }
+
+  &__input,
+  &__textarea,
+  &__select {
+    width: 100%;
+    padding: $spacing-small;
+    border: 2px solid $color-gray-light;
+    border-radius: $border-radius;
+    font-size: $font-size-base;
+    color: $color-dark;
+    background-color: $color-white;
+    transition: all $transition-speed ease;
+
+    &:focus {
+      outline: none;
+      border-color: $color-primary;
+      box-shadow: 0 0 0 3px rgba($color-primary, 0.1);
+    }
+
+    &::placeholder {
+      color: $color-gray;
+    }
+
+    &:disabled {
+      background-color: $color-gray-light;
+      cursor: not-allowed;
+    }
+
+    &--error {
+      border-color: $color-danger;
+
+      &:focus {
+        border-color: $color-danger;
+        box-shadow: 0 0 0 3px rgba($color-danger, 0.1);
+      }
+    }
+
+    &--success {
+      border-color: $color-success;
+
+      &:focus {
+        border-color: $color-success;
+        box-shadow: 0 0 0 3px rgba($color-success, 0.1);
+      }
+    }
+  }
+
+  &__textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+
+  &__select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%232C3E50' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right $spacing-small center;
+    padding-right: $spacing-large;
+  }
+
+  &__error-message {
+    display: block;
+    color: $color-danger;
+    font-size: $font-size-small;
+    margin-top: $spacing-xs;
+  }
+
+  &__success-message {
+    display: block;
+    color: $color-success;
+    font-size: $font-size-small;
+    margin-top: $spacing-xs;
+  }
+
+  &__help-text {
+    display: block;
+    color: $color-gray;
+    font-size: $font-size-small;
+    margin-top: $spacing-xs;
+  }
+}
+
+// Checkbox y Radio personalizados
+.form__checkbox,
+.form__radio {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: $spacing-small;
+
+  input {
+    margin-right: $spacing-xs;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+
+  label {
+    cursor: pointer;
+    user-select: none;
+  }
+}
+
+// Formulario de contacto específico
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: $color-white;
+  padding: $spacing-large;
+  border-radius: $border-radius-large;
+  box-shadow: $box-shadow-md;
+
+  &__title {
+    text-align: center;
+    color: $color-primary;
+    margin-bottom: $spacing-medium;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-medium;
+
+    @include respond-to('sm') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__submit {
+    @include button-variant($color-primary);
+    width: 100%;
+    margin-top: $spacing-small;
+  }
+}

@@ -1,0 +1,102 @@
+// ================================================
+// GRID LAYOUT - JM CREACIONES Y DISEÑO
+// ================================================
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 (-$spacing-small);
+}
+
+.col {
+  flex: 1;
+  padding: 0 $spacing-small;
+  margin-bottom: $spacing-medium;
+}
+
+// Sistema de columnas responsive
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    flex: 0 0 percentage($i / 12);
+    max-width: percentage($i / 12);
+    padding: 0 $spacing-small;
+  }
+}
+
+// Columnas responsive por breakpoint
+@include respond-to('sm') {
+  @for $i from 1 through 12 {
+    .col-sm-#{$i} {
+      flex: 0 0 percentage($i / 12);
+      max-width: percentage($i / 12);
+    }
+  }
+}
+
+@include respond-to('md') {
+  @for $i from 1 through 12 {
+    .col-md-#{$i} {
+      flex: 0 0 percentage($i / 12);
+      max-width: percentage($i / 12);
+    }
+  }
+}
+
+@include respond-to('lg') {
+  @for $i from 1 through 12 {
+    .col-lg-#{$i} {
+      flex: 0 0 percentage($i / 12);
+      max-width: percentage($i / 12);
+    }
+  }
+}
+
+// Utilidades de flexbox
+.d-flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-start {
+  align-items: flex-start;
+}
+
+.align-end {
+  align-items: flex-end;
+}
+
+// Gap utilities
+.gap-sm {
+  gap: $spacing-small;
+}
+
+.gap-md {
+  gap: $spacing-medium;
+}
+
+.gap-lg {
+  gap: $spacing-large;
+}

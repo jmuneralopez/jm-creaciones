@@ -1,0 +1,123 @@
+// ================================================
+// HEADER COMPONENT - JM CREACIONES Y DISEÑO
+// ================================================
+
+.header {
+  background-color: $color-white;
+  box-shadow: $box-shadow-sm;
+  position: sticky;
+  top: 0;
+  z-index: $z-index-sticky;
+  transition: all $transition-speed ease;
+
+  // EJEMPLO DE ANIDACIÓN DE SELECTORES
+  &__container {
+    @include flex-between;
+    padding: $spacing-small $spacing-medium;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @include respond-to('md') {
+      padding: $spacing-small $spacing-large;
+    }
+  }
+
+  &__logo {
+    @include flex-center;
+    gap: $spacing-xs;
+
+    img {
+      height: 50px;
+      width: auto;
+    }
+
+    &-text {
+      font-family: $font-primary;
+      font-size: $font-size-large;
+      font-weight: $font-weight-bold;
+      color: $color-primary;
+
+      span {
+        color: $color-secondary;
+      }
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include respond-to('md') {
+      display: flex;
+      gap: $spacing-medium;
+    }
+  }
+
+  &__link {
+    font-family: $font-primary;
+    font-weight: $font-weight-medium;
+    color: $color-dark;
+    padding: $spacing-xs $spacing-small;
+    border-radius: $border-radius-small;
+    transition: all $transition-speed ease;
+
+    &:hover {
+      color: $color-primary;
+      background-color: rgba($color-primary, 0.1);
+    }
+
+    &--active {
+      color: $color-primary;
+      background-color: rgba($color-primary, 0.1);
+    }
+  }
+
+  &__cta {
+    @include button-variant($color-accent, $color-dark);
+    padding: $spacing-xs $spacing-small;
+    font-size: $font-size-small;
+
+    @include respond-to('md') {
+      padding: $spacing-small $spacing-medium;
+      font-size: $font-size-base;
+    }
+  }
+
+  &__mobile-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: $font-size-xlarge;
+    color: $color-dark;
+    cursor: pointer;
+
+    @include respond-to('md') {
+      display: none;
+    }
+  }
+
+  // Mobile menu
+  &__mobile-menu {
+    display: none;
+    flex-direction: column;
+    padding: $spacing-medium;
+    background-color: $color-white;
+    border-top: 1px solid $color-gray-light;
+
+    &--active {
+      display: flex;
+
+      @include respond-to('md') {
+        display: none;
+      }
+    }
+
+    .header__link {
+      padding: $spacing-small;
+      border-bottom: 1px solid $color-gray-light;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}

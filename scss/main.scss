@@ -1,0 +1,249 @@
+// ================================================
+// MAIN SCSS - JM CREACIONES Y DISEÑO
+// ================================================
+
+// === GOOGLE FONTS ===
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+// === UTILIDADES ===
+@import 'utils/variables';
+@import 'utils/mixins';
+@import 'utils/reset';
+@import 'utils/responsive';
+
+// === LAYOUT ===
+@import 'layout/grid';
+@import 'layout/navbar';
+@import 'layout/forms';
+
+// === COMPONENTES ===
+@import 'components/header';
+@import 'components/footer';
+@import 'components/cards';
+@import 'components/buttons';
+
+// ================================================
+// ESTILOS GENERALES
+// ================================================
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-medium;
+
+  @include respond-to('lg') {
+    padding: 0 $spacing-large;
+  }
+}
+
+.section {
+  padding: $spacing-large 0;
+
+  @include respond-to('md') {
+    padding: $spacing-xlarge 0;
+  }
+
+  &__title {
+    font-family: $font-primary;
+    font-size: $font-size-xxlarge;
+    color: $color-dark;
+    text-align: center;
+    margin-bottom: $spacing-small;
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background-color: $color-primary;
+      margin: $spacing-small auto 0;
+      border-radius: 2px;
+    }
+  }
+
+  &__subtitle {
+    text-align: center;
+    color: $color-gray;
+    max-width: 600px;
+    margin: 0 auto $spacing-large;
+  }
+}
+
+// ================================================
+// HERO SECTION
+// ================================================
+
+.hero {
+  background: linear-gradient(135deg, rgba($color-primary, 0.9), rgba($color-secondary, 0.9)),
+              url('../img/banners/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  color: $color-white;
+  padding: $spacing-xlarge 0;
+  text-align: center;
+  position: relative;
+
+  @include respond-to('md') {
+    padding: 120px 0;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__title {
+    font-family: $font-primary;
+    font-size: 2.5rem;
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacing-medium;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+
+    @include respond-to('md') {
+      font-size: 4rem;
+    }
+  }
+
+  &__subtitle {
+    font-size: $font-size-large;
+    margin-bottom: $spacing-large;
+    opacity: 0.95;
+
+    @include respond-to('md') {
+      font-size: $font-size-xlarge;
+    }
+  }
+
+  &__buttons {
+    @include flex-center;
+    gap: $spacing-medium;
+    flex-wrap: wrap;
+  }
+
+  &__cta {
+    @include button-variant($color-accent, $color-dark);
+    font-size: $font-size-large;
+    padding: $spacing-medium $spacing-large;
+
+    &--outline {
+      background-color: transparent;
+      border: 2px solid $color-white;
+      color: $color-white;
+
+      &:hover {
+        background-color: $color-white;
+        color: $color-primary;
+      }
+    }
+  }
+}
+
+// ================================================
+// CATEGORÍAS
+// ================================================
+
+.categories {
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-medium;
+
+    @include respond-to('sm') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond-to('lg') {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+// ================================================
+// PRODUCTOS
+// ================================================
+
+.products {
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-medium;
+
+    @include respond-to('sm') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond-to('md') {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include respond-to('lg') {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__filter {
+    @include flex-between;
+    margin-bottom: $spacing-medium;
+    flex-wrap: wrap;
+    gap: $spacing-small;
+  }
+
+  &__sort {
+    padding: $spacing-xs $spacing-small;
+    border: 2px solid $color-gray-light;
+    border-radius: $border-radius;
+    font-size: $font-size-base;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+      border-color: $color-primary;
+    }
+  }
+}
+
+// ================================================
+// UTILIDADES GENERADAS CON INTERPOLACIÓN
+// ================================================
+
+// Generación de clases de margen usando interpolación
+@include generate-spacing('mt', 'margin-top');
+@include generate-spacing('mb', 'margin-bottom');
+@include generate-spacing('my', 'margin');
+@include generate-spacing('pt', 'padding-top');
+@include generate-spacing('pb', 'padding-bottom');
+
+// ================================================
+// ANIMACIONES
+// ================================================
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn $transition-speed-slow ease;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in-left {
+  animation: slideInLeft $transition-speed-slow ease;
+}

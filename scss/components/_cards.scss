@@ -1,0 +1,185 @@
+// ================================================
+// CARDS COMPONENT - JM CREACIONES Y DISEÑO
+// ================================================
+
+// EJEMPLO DE INTERPOLACIÓN #1: Generación dinámica de clases para categorías
+$categories: (
+  'sublimacion': $color-primary,
+  'navidad': $color-danger,
+  'pijamas': $color-secondary,
+  'decoracion': $color-accent
+);
+
+.card {
+  @include card;
+  overflow: hidden;
+
+  // ANIDACIÓN DE SELECTORES
+  &__image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: $border-radius;
+    margin-bottom: $spacing-small;
+    transition: transform $transition-speed ease;
+  }
+
+  &__content {
+    padding: $spacing-small 0;
+  }
+
+  &__title {
+    font-family: $font-primary;
+    font-size: $font-size-large;
+    color: $color-dark;
+    margin-bottom: $spacing-xs;
+    @include truncate;
+  }
+
+  &__description {
+    color: $color-gray;
+    font-size: $font-size-small;
+    @include line-clamp(3);
+    margin-bottom: $spacing-small;
+  }
+
+  &__price {
+    font-size: $font-size-large;
+    font-weight: $font-weight-bold;
+    color: $color-primary;
+    margin-bottom: $spacing-small;
+  }
+
+  &__footer {
+    @include flex-between;
+    gap: $spacing-small;
+  }
+
+  &__button {
+    @include button-variant($color-primary);
+    padding: $spacing-xs $spacing-small;
+    font-size: $font-size-small;
+    flex: 1;
+  }
+
+  &:hover {
+    .card__image {
+      transform: scale(1.05);
+    }
+  }
+
+  // INTERPOLACIÓN #1: Variantes de tarjetas por categoría
+  @each $category, $color in $categories {
+    &--#{$category} {
+      border-top: 4px solid $color;
+
+      .card__title {
+        color: $color;
+      }
+
+      .card__button {
+        background-color: $color;
+
+        &:hover {
+          background-color: darken($color, 10%);
+        }
+      }
+    }
+  }
+}
+
+// Card de Categoría (para página de inicio)
+.category-card {
+  @include card;
+  text-align: center;
+  cursor: pointer;
+  min-height: 300px;
+  @include flex-column;
+  justify-content: center;
+
+  &__icon {
+    font-size: 4rem;
+    margin-bottom: $spacing-medium;
+  }
+
+  &__title {
+    font-family: $font-primary;
+    font-size: $font-size-xlarge;
+    color: $color-dark;
+    margin-bottom: $spacing-small;
+  }
+
+  &__count {
+    color: $color-gray;
+    font-size: $font-size-small;
+  }
+
+  // INTERPOLACIÓN: Iconos y colores por categoría
+  @each $category, $color in $categories {
+    &--#{$category} {
+      .category-card__icon {
+        color: $color;
+      }
+
+      &:hover {
+        border-top: 4px solid $color;
+
+        .category-card__title {
+          color: $color;
+        }
+      }
+    }
+  }
+}
+
+// Card de Producto Destacado
+.featured-card {
+  @include card;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-medium;
+
+  @include respond-to('md') {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &__image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: $border-radius;
+  }
+
+  &__content {
+    @include flex-column;
+    justify-content: center;
+  }
+
+  &__badge {
+    display: inline-block;
+    padding: $spacing-xs $spacing-small;
+    background-color: $color-accent;
+    color: $color-dark;
+    font-size: $font-size-small;
+    font-weight: $font-weight-bold;
+    border-radius: $border-radius-small;
+    margin-bottom: $spacing-small;
+    width: fit-content;
+  }
+
+  &__title {
+    font-family: $font-primary;
+    font-size: $font-size-xxlarge;
+    margin-bottom: $spacing-small;
+  }
+
+  &__description {
+    color: $color-gray;
+    margin-bottom: $spacing-medium;
+  }
+
+  &__button {
+    @include button-variant($color-primary);
+    width: fit-content;
+  }
+}

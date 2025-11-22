@@ -1,0 +1,96 @@
+// ================================================
+// NAVBAR LAYOUT - JM CREACIONES Y DISEÑO
+// ================================================
+
+.navbar {
+  background-color: $color-white;
+  box-shadow: $box-shadow-sm;
+
+  &__wrapper {
+    @include flex-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: $spacing-small $spacing-medium;
+  }
+
+  &__brand {
+    @include flex-center;
+    gap: $spacing-xs;
+    font-family: $font-primary;
+    font-size: $font-size-large;
+    font-weight: $font-weight-bold;
+    color: $color-primary;
+  }
+
+  &__menu {
+    display: flex;
+    gap: $spacing-medium;
+    align-items: center;
+
+    @media (max-width: #{$breakpoint-md - 1}) {
+      display: none;
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    &:hover {
+      .navbar__dropdown {
+        display: block;
+      }
+    }
+  }
+
+  &__link {
+    padding: $spacing-xs $spacing-small;
+    color: $color-dark;
+    font-weight: $font-weight-medium;
+    transition: color $transition-speed ease;
+
+    &:hover {
+      color: $color-primary;
+    }
+
+    &--active {
+      color: $color-primary;
+    }
+  }
+
+  &__dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: $color-white;
+    box-shadow: $box-shadow-md;
+    border-radius: $border-radius;
+    min-width: 200px;
+    z-index: $z-index-dropdown;
+    padding: $spacing-xs 0;
+
+    &-item {
+      display: block;
+      padding: $spacing-xs $spacing-small;
+      color: $color-dark;
+      transition: all $transition-speed ease;
+
+      &:hover {
+        background-color: rgba($color-primary, 0.1);
+        color: $color-primary;
+      }
+    }
+  }
+}
+
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: $font-size-xlarge;
+  cursor: pointer;
+
+  @media (max-width: #{$breakpoint-md - 1}) {
+    display: block;
+  }
+}

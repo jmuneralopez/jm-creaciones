@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "bootstrap": "^5.3.8"
+    "sass": "^1.69.0"
+  },
+  "name": "jm-diseno",
+  "description": "Sitio web JM Creaciones y Diseño",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass scss/main.scss css/main.css",
+    "sass:watch": "sass --watch scss/main.scss:css/main.css",
+    "start": "live-server"
+  },
+   "keywords": ["sass", "bootstrap", "web"],
+  "author": "Juan Carlos Múnera",
+  "license": "ISC",
+  "type": "commonjs"
+}

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JM Creaciones y Diseño - Sublimación, pijamas, artículos navideños y decoraciones personalizadas">
+    <title>JM Creaciones y Diseño - Inicio</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS (compilado desde Sass) -->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header__container">
+            <div class="header__logo">
+                <img src="img/logo.png" alt="JM Creaciones Logo" onerror="this.style.display='none'">
+                <span class="header__logo-text">JM <span>Creaciones</span></span>
+            </div>
+            
+            <nav class="header__nav">
+                <a href="index.html" class="header__link header__link--active">Inicio</a>
+                <a href="productos.html" class="header__link">Productos</a>
+                <a href="nosotros.html" class="header__link">Nosotros</a>
+                <a href="contacto.html" class="header__link">Contacto</a>
+            </nav>
+            
+            <a href="contacto.html" class="header__cta">Cotizar</a>
+            
+            <button class="header__mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="header__mobile-menu" id="mobileMenu">
+            <a href="index.html" class="header__link header__link--active">Inicio</a>
+            <a href="productos.html" class="header__link">Productos</a>
+            <a href="nosotros.html" class="header__link">Nosotros</a>
+            <a href="contacto.html" class="header__link">Contacto</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero__content">
+                <h1 class="hero__title fade-in">Creaciones Únicas y Personalizadas</h1>
+                <p class="hero__subtitle fade-in">Sublimación, pijamas, decoraciones navideñas y mucho más</p>
+                <div class="hero__buttons">
+                    <a href="productos.html" class="hero__cta">Ver Productos</a>
+                    <a href="contacto.html" class="hero__cta hero__cta--outline">Contactar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORÍAS -->
+    <section class="section categories">
+        <div class="container">
+            <h2 class="section__title">Nuestras Categorías</h2>
+            <p class="section__subtitle">Explora nuestra amplia variedad de productos personalizados</p>
+            
+            <div class="categories__grid">
+                <!-- Categoría: Sublimación -->
+                <a href="categorias/sublimacion.html" class="category-card category-card--sublimacion">
+                    <i class="fas fa-tshirt category-card__icon"></i>
+                    <h3 class="category-card__title">Sublimación</h3>
+                    <p class="category-card__count">Camisetas, mugs, termos y más</p>
+                </a>
+                
+                <!-- Categoría: Navidad -->
+                <a href="categorias/navidad.html" class="category-card category-card--navidad">
+                    <i class="fas fa-gifts category-card__icon"></i>
+                    <h3 class="category-card__title">Navidad</h3>
+                    <p class="category-card__count">Decoraciones y artículos festivos</p>
+                </a>
+                
+                <!-- Categoría: Pijamas -->
+                <a href="categorias/pijamas.html" class="category-card category-card--pijamas">
+                    <i class="fas fa-bed category-card__icon"></i>
+                    <h3 class="category-card__title">Pijamas</h3>
+                    <p class="category-card__count">Pijamas y protectores de colchón</p>
+                </a>
+                
+                <!-- Categoría: Decoración -->
+                <a href="categorias/decoracion.html" class="category-card category-card--decoracion">
+                    <i class="fas fa-palette category-card__icon"></i>
+                    <h3 class="category-card__title">Decoración</h3>
+                    <p class="category-card__count">Manteles, muñecos y más</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTOS DESTACADOS -->
+    <section class="section products" style="background-color: #fff;">
+        <div class="container">
+            <h2 class="section__title">Productos Destacados</h2>
+            <p class="section__subtitle">Los favoritos de nuestros clientes</p>
+            
+            <div class="products__grid">
+                <!-- Producto 1 -->
+                <div class="card card--sublimacion">
+                    <img src="img/productos/camiseta-1.jpg" alt="Camiseta Personalizada" class="card__image" onerror="this.src='https://via.placeholder.com/300x200?text=Camiseta'">
+                    <div class="card__content">
+                        <h3 class="card__title">Camiseta Personalizada</h3>
+                        <p class="card__description">Diseños únicos en sublimación de alta calidad</p>
+                        <div class="card__footer">
+                            <a href="contacto.html" class="card__button">Cotizar</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Producto 2 -->
+                <div class="card card--sublimacion">
+                    <img src="img/productos/mug-1.jpg" alt="Mug Personalizado" class="card__image" onerror="this.src='https://via.placeholder.com/300x200?text=Mug'">
+                    <div class="card__content">
+                        <h3 class="card__title">Mug Personalizado</h3>
+                        <p class="card__description">Tazas con tus diseños favoritos</p>
+                        <div class="card__footer">
+                            <a href="contacto.html" class="card__button">Cotizar</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Producto 3 -->
+                <div class="card card--navidad">
+                    <img src="img/productos/navidad-1.jpg" alt="Decoración Navideña" class="card__image" onerror="this.src='https://via.placeholder.com/300x200?text=Navidad'">
+                    <div class="card__content">
+                        <h3 class="card__title">Decoración Navideña</h3>
+                        <p class="card__description">Artículos únicos para esta temporada</p>
+                        <div class="card__footer">
+                            <a href="contacto.html" class="card__button">Cotizar</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Producto 4 -->
+                <div class="card card--pijamas">
+                    <img src="img/productos/pijama-1.jpg" alt="Pijama Personalizada" class="card__image" onerror="this.src='https://via.placeholder.com/300x200?text=Pijama'">
+                    <div class="card__content">
+                        <h3 class="card__title">Pijama Personalizada</h3>
+                        <p class="card__description">Comodidad y estilo en una sola prenda</p>
+                        <div class="card__footer">
+                            <a href="contacto.html" class="card__button">Cotizar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-lg">
+                <a href="productos.html" class="btn btn--primary btn--lg">Ver Todos los Productos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE NOSOTROS -->
+    <section class="section" style="background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(78, 205, 196, 0.1));">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h2 class="section__title text-md-left">¿Por qué elegirnos?</h2>
+                    <p class="mb-md">En JM Creaciones y Diseño nos especializamos en productos personalizados de alta calidad. Cada pieza es elaborada con dedicación y atención al detalle.</p>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 1rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4; margin-right: 0.5rem;"></i>
+                            Productos 100% personalizados
+                        </li>
+                        <li style="margin-bottom: 1rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4; margin-right: 0.5rem;"></i>
+                            Materiales de alta calidad
+                        </li>
+                        <li style="margin-bottom: 1rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4; margin-right: 0.5rem;"></i>
+                            Entrega rápida y confiable
+                        </li>
+                        <li style="margin-bottom: 1rem;">
+                            <i class="fas fa-check-circle" style="color: #4ECDC4; margin-right: 0.5rem;"></i>
+                            Atención personalizada
+                        </li>
+                    </ul>
+                    <a href="nosotros.html" class="btn btn--secondary btn--md">Conocer Más</a>
+                </div>
+                <div class="col-md-6">
+                    <img src="img/banners/about-us.jpg" alt="Sobre Nosotros" style="width: 100%; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.15);" onerror="this.src='https://via.placeholder.com/500x400?text=Sobre+Nosotros'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__content">
+                <!-- Columna 1: Sobre Nosotros -->
+                <div class="footer__section">
+                    <h3 class="footer__section-title">JM Creaciones</h3>
+                    <p class="footer__section-text">
+                        Creamos productos personalizados únicos que reflejan tu estilo y personalidad. Calidad y creatividad en cada diseño.
+                    </p>
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Columna 2: Enlaces Rápidos -->
+                <div class="footer__section">
+                    <h3 class="footer__section-title">Enlaces Rápidos</h3>
+                    <div class="footer__links">
+                        <a href="index.html">Inicio</a>
+                        <a href="productos.html">Productos</a>
+                        <a href="nosotros.html">Nosotros</a>
+                        <a href="contacto.html">Contacto</a>
+                    </div>
+                </div>
+                
+                <!-- Columna 3: Categorías -->
+                <div class="footer__section">
+                    <h3 class="footer__section-title">Categorías</h3>
+                    <div class="footer__links">
+                        <a href="categorias/sublimacion.html">Sublimación</a>
+                        <a href="categorias/navidad.html">Artículos Navideños</a>
+                        <a href="categorias/pijamas.html">Pijamas</a>
+                        <a href="categorias/decoracion.html">Decoración</a>
+                    </div>
+                </div>
+                
+                <!-- Columna 4: Contacto -->
+                <div class="footer__section">
+                    <h3 class="footer__section-title">Contacto</h3>
+                    <div class="footer__contact">
+                        <div class="footer__contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+57 300 123 4567</span>
+                        </div>
+                        <div class="footer__contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@jmcreaciones.com</span>
+                        </div>
+                        <div class="footer__contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Bogotá, Colombia</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="footer__bottom">
+                <p>&copy; 2025 <a href="index.html">JM Creaciones y Diseño</a>. Todos los derechos reservados.</p>
+                <p>Desarrollado por Maira Alejandra Rodriguez Sanchez y Juan Carlos Múnera López</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/573001234567" class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>

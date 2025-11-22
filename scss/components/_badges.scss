@@ -1,0 +1,14 @@
+@use "../utils/variables" as v;
+
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  background: v.$color-primary;
+  color: white;
+  border-radius: 50px;
+  font-size: .8rem;
+
+  &--secondary {
+    background: v.$color-secondary;
+  }
+}

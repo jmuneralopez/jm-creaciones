@@ -1,0 +1,80 @@
+// ================================================
+// RESET CSS - JM CREACIONES Y DISEÑO
+// ================================================
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-secondary;
+  color: $color-dark;
+  line-height: 1.6;
+  background-color: $color-light;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-primary;
+  font-weight: $font-weight-bold;
+  line-height: 1.2;
+  margin-bottom: $spacing-small;
+}
+
+h1 { font-size: $font-size-xxlarge; }
+h2 { font-size: $font-size-xlarge; }
+h3 { font-size: $font-size-large; }
+
+p {
+  margin-bottom: $spacing-small;
+}
+
+a {
+  color: $color-primary;
+  text-decoration: none;
+  transition: color $transition-speed ease;
+  
+  &:hover {
+    color: darken($color-primary, 15%);
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+// Utilidad para ocultar visualmente pero mantener accesibilidad
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
