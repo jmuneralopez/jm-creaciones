@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "bootstrap": "^5.3.8"
+    "@angular/platform-server": "^21.0.0",
+    "bootstrap": "^5.3.8",
     "sass": "^1.69.0"
   },
   "name": "jm-diseno",
@@ -13,7 +14,11 @@
     "sass:watch": "sass --watch scss/main.scss:css/main.css",
     "start": "live-server"
   },
-   "keywords": ["sass", "bootstrap", "web"],
+  "keywords": [
+    "sass",
+    "bootstrap",
+    "web"
+  ],
   "author": "Juan Carlos Múnera",
   "license": "ISC",
   "type": "commonjs"
