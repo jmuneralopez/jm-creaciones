@@ -1,0 +1,112 @@
+<section class="hero">
+  <div class="container">
+    <div class="hero__content">
+      <h1 class="hero__title fade-in">Creaciones Únicas y Personalizadas</h1>
+      <p class="hero__subtitle fade-in">Sublimación, pijamas, decoraciones navideñas y mucho más</p>
+      <div class="hero__buttons">
+        <a routerLink="/productos" class="hero__cta">Ver Productos</a>
+        <a routerLink="/contacto" class="hero__cta hero__cta--outline">Contactar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section categories">
+  <div class="container">
+    <h2 class="section__title">Nuestras Categorías</h2>
+    <p class="section__subtitle">Explora nuestra amplia variedad de productos personalizados</p>
+    
+    <div class="categories__grid">
+      <div class="category-card category-card--sublimacion" (click)="navigateToProducts()">
+        <i class="fas fa-tshirt category-card__icon"></i>
+        <h3 class="category-card__title">Sublimación</h3>
+        <p class="category-card__count">Camisetas, mugs, termos y más</p>
+      </div>
+      
+      <div class="category-card category-card--navidad" (click)="navigateToProducts()">
+        <i class="fas fa-gifts category-card__icon"></i>
+        <h3 class="category-card__title">Navidad</h3>
+        <p class="category-card__count">Decoraciones y artículos festivos</p>
+      </div>
+      
+      <div class="category-card category-card--pijamas" (click)="navigateToProducts()">
+        <i class="fas fa-bed category-card__icon"></i>
+        <h3 class="category-card__title">Pijamas</h3>
+        <p class="category-card__count">Pijamas y protectores de colchón</p>
+      </div>
+      
+      <div class="category-card category-card--decoracion" (click)="navigateToProducts()">
+        <i class="fas fa-palette category-card__icon"></i>
+        <h3 class="category-card__title">Decoración</h3>
+        <p class="category-card__count">Manteles, muñecos y más</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section products" style="background-color: #fff;">
+  <div class="container">
+    <h2 class="section__title">Productos Destacados</h2>
+    <p class="section__subtitle">Los favoritos de nuestros clientes</p>
+    
+    <div class="products__grid">
+      <div class="card card--sublimacion">
+        <img src="img/productos/camiseta1.jpg" 
+             alt="Camiseta Personalizada" 
+             class="card__image">
+        <div class="card__content">
+          <h3 class="card__title">Camiseta Personalizada</h3>
+          <p class="card__description">Diseños únicos en sublimación de alta calidad</p>
+          <div class="card__footer">
+            <a routerLink="/contacto" class="card__button">Cotizar</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card card--mugs">
+        <img src="img/productos/mug1.jpg"
+             alt="Mug Personalizado" 
+             class="card__image">
+        <div class="card__content">
+          <h3 class="card__title">Mug Personalizado</h3>
+          <p class="card__description">Tazas con tus diseños favoritos</p>
+          <div class="card__footer">
+            <a routerLink="/contacto" class="card__button">Cotizar</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card card--navidad">
+        <img src="img/productos/navidad1.jpg"
+             alt="Decoración Navideña" 
+             class="card__image">
+        <div class="card__content">
+          <h3 class="card__title">Decoración Navideña</h3>
+          <p class="card__description">Artículos únicos para esta temporada</p>
+          <div class="card__footer">
+            <a routerLink="/contacto" class="card__button">Cotizar</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card card--pijamas">
+        <img src="img/productos/pijama1.jpg"
+             alt="Pijama Personalizada" 
+             class="card__image">
+        <div class="card__content">
+          <h3 class="card__title">Pijama Personalizada</h3>
+          <p class="card__description">Comodidad y estilo en una sola prenda</p>
+          <div class="card__footer">
+            <a routerLink="/contacto" class="card__button">Cotizar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="text-center mt-lg">
+      <button (click)="navigateToProducts()" class="btn btn--primary btn--lg">
+        Ver Todos los Productos
+      </button>
+    </div>
+  </div>
+</section>

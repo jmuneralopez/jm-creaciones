@@ -1,0 +1,28 @@
+<header class="header">
+  <div class="header__container">
+    <a routerLink="/" class="header__logo">
+        <img src="img/logo.png" alt="JM Creaciones Logo" class="header__logo-img" onerror="this.style.display='none'">
+      <span class="header__logo-text">JM <span>Creaciones</span></span>
+    </a>
+    
+    <nav class="header__nav">
+      <a routerLink="/" routerLinkActive="header__link--active" [routerLinkActiveOptions]="{exact: true}" class="header__link">Inicio</a>
+      <a routerLink="/productos" routerLinkActive="header__link--active" class="header__link">Productos</a>
+      <a routerLink="/nosotros" routerLinkActive="header__link--active" class="header__link">Nosotros</a>
+      <a routerLink="/contacto" routerLinkActive="header__link--active" class="header__link">Contacto</a>
+    </nav>
+    
+    <a routerLink="/contacto" class="header__cta">Cotizar</a>
+    
+    <button class="header__mobile-toggle" (click)="toggleMobileMenu()">
+      <i class="fas" [ngClass]="isMobileMenuOpen ? 'fa-times' : 'fa-bars'"></i>
+    </button>
+  </div>
+  
+  <div class="header__mobile-menu" [ngClass]="{'header__mobile-menu--active': isMobileMenuOpen}">
+    <a routerLink="/" routerLinkActive="header__link--active" [routerLinkActiveOptions]="{exact: true}" class="header__link" (click)="closeMobileMenu()">Inicio</a>
+    <a routerLink="/productos" routerLinkActive="header__link--active" class="header__link" (click)="closeMobileMenu()">Productos</a>
+    <a routerLink="/nosotros" routerLinkActive="header__link--active" class="header__link" (click)="closeMobileMenu()">Nosotros</a>
+    <a routerLink="/contacto" routerLinkActive="header__link--active" class="header__link" (click)="closeMobileMenu()">Contacto</a>
+  </div>
+</header>
